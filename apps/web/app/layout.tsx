@@ -1,12 +1,11 @@
+import { TunnelToolbar } from "@tunnel/nextjs";
 import { dir } from "i18next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { headers, cookies } from "next/headers";
-import Script from "next/script";
 import React from "react";
 
 import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
 
 import { prepareRootMetadata } from "@lib/metadata";
 
@@ -69,13 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       style={embedColorScheme ? { colorScheme: embedColorScheme as string } : undefined}
       data-nextjs-router="app">
       <head nonce={nonce}>
-        {!IS_PRODUCTION && process.env.VERCEL_ENV === "preview" && (
-          // eslint-disable-next-line @next/next/no-sync-scripts
-          <Script
-            data-project-id="KjpMrKTnXquJVKfeqmjdTffVPf1a6Unw2LZ58iE4"
-            src="https://snippet.meticulous.ai/v1/stagingMeticulousSnippet.js"
-          />
-        )}
+        <TunnelToolbar projectId={process.env.TUNNEL_PROJECT_ID} branch={process.env.RAILWAY_GIT_BRANCH} />
         <style>{`
           :root {
             --font-inter: ${interFont.style.fontFamily.replace(/\'/g, "")};
