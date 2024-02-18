@@ -37,7 +37,9 @@
         "NEXT_PUBLIC_WEBSITE_URL",
         "STRIPE_PREMIUM_PLAN_PRODUCT_ID",
         "STRIPE_TEAM_MONTHLY_PRICE_ID",
-        "STRIPE_ORG_MONTHLY_PRICE_ID"
+        "STRIPE_ORG_MONTHLY_PRICE_ID",
+        "TUNNEL_PROJECT_ID",
+        "RAILWAY_GIT_BRANCH"
       ]
     },
     "@calcom/web#dx": {
