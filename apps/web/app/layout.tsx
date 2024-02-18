@@ -68,12 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       style={embedColorScheme ? { colorScheme: embedColorScheme as string } : undefined}
       data-nextjs-router="app">
       <head nonce={nonce}>
-        {process.env.TUNNEL_PROJECT_ID !== "undefined" && (
-          <TunnelToolbar
-            projectId={process.env.TUNNEL_PROJECT_ID as string}
-            branch={process.env.RAILWAY_GIT_BRANCH}
-          />
-        )}
+        <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.RAILWAY_GIT_BRANCH} />
         <style>{`
           :root {
             --font-inter: ${interFont.style.fontFamily.replace(/\'/g, "")};
