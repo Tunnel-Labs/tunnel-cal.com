@@ -1,3 +1,4 @@
+import { TunnelToolbar } from "@tunnel/nextjs";
 import type { IncomingMessage } from "http";
 import type { AppContextType } from "next/dist/shared/lib/utils";
 import React from "react";
@@ -11,10 +12,19 @@ import "../styles/globals.css";
 function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
 
-  if (Component.PageWrapper !== undefined) return Component.PageWrapper(props);
+  if (Component.PageWrapper !== undefined) {
+    return (
+      <>
+        <Component.PageWrapper {...props} />
+        <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.RAILWAY_GIT_BRANCH} />
+      </>
+    );
+  }
+
   return (
     <>
       <Component {...pageProps} />
+      <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.RAILWAY_GIT_BRANCH} />
     </>
   );
 }

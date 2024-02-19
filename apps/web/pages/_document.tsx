@@ -77,11 +77,6 @@ class MyDocument extends Document<Props> {
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFC" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1F1F1F" />
           {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-          <script
-            src="https://tunnelapp.dev/__tunnel/script.js"
-            data-project-id="cfvo2xxgwvtrc2frihr8cep5"
-            data-branch={process.env.RAILWAY_GIT_BRANCH}
-          />
         </Head>
 
         <body
