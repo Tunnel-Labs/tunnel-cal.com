@@ -5,8 +5,6 @@ import type { DocumentContext, DocumentProps } from "next/document";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { z } from "zod";
 
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-
 import { csp } from "@lib/csp";
 
 type Props = Record<string, unknown> & DocumentProps & { newLocale: string };
@@ -78,13 +76,12 @@ class MyDocument extends Document<Props> {
           <meta name="msapplication-TileColor" content="#ff0000" />
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFC" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1F1F1F" />
-          {!IS_PRODUCTION && process.env.VERCEL_ENV === "preview" && (
-            // eslint-disable-next-line @next/next/no-sync-scripts
-            <script
-              data-project-id="KjpMrKTnXquJVKfeqmjdTffVPf1a6Unw2LZ58iE4"
-              src="https://snippet.meticulous.ai/v1/stagingMeticulousSnippet.js"
-            />
-          )}
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+          <script
+            src="https://tunnelapp.dev/__tunnel/script.js"
+            data-project-id="cfvo2xxgwvtrc2frihr8cep5"
+            data-branch={process.env.RAILWAY_GIT_BRANCH}
+          />
         </Head>
 
         <body

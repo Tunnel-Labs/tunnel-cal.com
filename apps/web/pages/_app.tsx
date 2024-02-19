@@ -1,4 +1,3 @@
-import { TunnelToolbar } from "@tunnel/nextjs";
 import type { IncomingMessage } from "http";
 import type { AppContextType } from "next/dist/shared/lib/utils";
 import React from "react";
@@ -16,7 +15,6 @@ function MyApp(props: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.RAILWAY_GIT_BRANCH} />
     </>
   );
 }
