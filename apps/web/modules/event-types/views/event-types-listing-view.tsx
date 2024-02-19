@@ -412,11 +412,16 @@ export const EventTypeList = ({
           const isChildrenManagedEventType =
             type.metadata?.managedEventConfig !== undefined && type.schedulingType !== SchedulingType.MANAGED;
           return (
-            <li key={type.id}>
+            <li key={type.id} className="group">
               <div className="hover:bg-muted flex w-full items-center justify-between transition">
-                <div className="group flex w-full max-w-full items-center justify-between overflow-hidden px-4 py-4 sm:px-6">
+                <div className="group flex w-full max-w-full items-center justify-between overflow-hidden px-4 py-4 group-first:pl-8 sm:px-6">
                   {!(firstItem && firstItem.id === type.id) && (
-                    <ArrowButton onClick={() => moveEventType(index, -1)} arrowDirection="up" />
+                    <ArrowButton
+                      onClick={() => {
+                        setTimeout(() => moveEventType(index, -1), 2000);
+                      }}
+                      arrowDirection="up"
+                    />
                   )}
 
                   {!(lastItem && lastItem.id === type.id) && (

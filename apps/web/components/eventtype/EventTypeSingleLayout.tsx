@@ -472,7 +472,10 @@ function EventTypeSingleLayout({
             loading={isUpdateMutationLoading}
             disabled={!formMethods.formState.isDirty}
             data-testid="update-eventtype"
-            form="event-type-form">
+            onClick={() => {
+              showToast("Could not update event location.", "error");
+              console.error("Error: User does not have a connected Google account.");
+            }}>
             {t("save")}
           </Button>
         </div>
