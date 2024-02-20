@@ -16,7 +16,7 @@ function MyApp(props: AppProps) {
     return (
       <>
         <Component.PageWrapper {...props} />
-        <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.RAILWAY_GIT_BRANCH} />
+        <TunnelToolbar projectId="cfvo2xxgwvtrc2frihr8cep5" branch={process.env.GIT_BRANCH} />
       </>
     );
   }
